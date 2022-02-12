@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <div class="container">
+        <h1>DRIVING LICENCE RENEWAL</h1>
+        <h3>Lets get started</h3>
+        <p>Add your details (as per your registered record )</p>
+        <form class="form" onkeydown="return event.key != 'Enter';">
+            <div class="form__page form__page--active">
+                <div class="input__field">
+                    <input class="input" type="text" placeholder="Your Name" required />
+
+                </div>
+                <div class="input__field">
+                    <p>Nature of driving licence ?</p>
+                    <div class="input input__field--first">
+
+
+                        <div class=" input__field--item">
+
+                            <input class="last__element rinput" name="licence" type="radio" value="private" id="private" required>
+                            <label for="private">Private</label>
+                        </div>
+                        <div class="input__field--item">
+                            <input class="last__element rinput" name="licence" type="radio" value="commercial" id="commercial" required>
+                            <label for="commercial">Commercial</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__page">
+                <div class="input__field">
+                    <div class="input__field--second">
+
+
+                        <div class="input__field--item">
+                            <select class="input" name="issueyear" id="issued__date--list" required>
+                                <option value="" class="required" selected disabled hidden>Issued Year of licence</option>
+                            </select>
+                        </div>
+
+                        <div class="input__field--item">
+                            <select class="input" name="expiredyear" id="expired__date--list" required>
+                                <option value="" class="required" selected disabled hidden>Expiring Year of licence</option>
+                            </select>
+                        </div>
+                        <div class="input__field--item">
+                            <select onchange=movenext() class="input" name="issueplace" id="place" required>
+                                <option value="" class="last__element--list required" id="city" selected disabled hidden>Issued Place of DL</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bangluru">Bangluru</option>
+                                <option value="delhi">delhi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="back__btn">Back</button>
+            </div>
+            <div class="form__page">
+
+                <div class="input__field">
+                    <div class="input__field--third">
+
+                        <select class="input" name="dobproof" required>
+                            <option value="" class="required" selected disabled hidden>Available proof of D.O.B.</option>
+                            <option value="10thCertificate">10th Certificate</option>
+                            <option value="schoolleavingcertificate">school leaving certificate</option>
+                            <option value="PANcard">PAN card</option>
+                            <option value="passport">Passport</option>
+                        </select>
+                        <select class="input" name="expiredyear" id="expired__date--list" required>
+                            <option value="" class="required" selected disabled hidden>Address proof available</option>
+                            <option value="VoterIDcard">Voter ID card</option>
+                            <option value="Electricitybill">Electricity bill</option>
+                            <option value="passport">passport</option>
+                            <option value="GovtBankAccount">Govt Bank Account</option>
+                            <option value="Adharcard">Adhar card</option>
+                        </select>
+                        <select onchange=movenext() class="last__element--list input" name="issueplace" id="place" required>
+                            <option value="" class="required" selected disabled hidden>Current Place of DL</option>
+                            " selected disabled hidden>Issued Place of DL</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bangluru">Bangluru</option>
+                                <option value="delhi">delhi</option>
+                        </select>
+                    </div>
+
+                </div>
+                <button class="back__btn">Back</button>
+
+            </div>
+            <div class="form__page">
+                <h3>ADDITIONAL REQUIREMENTS</h3>
+                <div class="input__field">
+                    <p>If previous Driving Licence was issued from different city then current place of residence ?</p>
+                    <div class=" input__field--forth">
+                        <div class="input input__field--item">
+                            <input class="" name="NOC" type="radio" value="NOCyes" required id="NOCyes">
+                            <label for="NOCyes">NOC available from previous city</label>
+                        </div>
+
+                        <div class="input__field--item">
+                            <input class="" name="NOC" required type="radio" value="NOCnot" id="NOCnot">
+                            <label for="NOCnot">NOC not available from previous city</label>
+                        </div>
+
+                        <div class="input__field--item">
+                            <input class="" name="NOC" required type="radio" value="NOCnr" id="NOCnr">
+                            <label for="NOCnr">Same city, NOC not required</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group">
+
+
+                    <button class="back__btn">Back</button>
+
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+        <div class="progress-bar">
+
+                <span id="percentage" class="percentage"></span>
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
